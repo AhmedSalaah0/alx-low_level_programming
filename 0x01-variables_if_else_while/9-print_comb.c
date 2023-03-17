@@ -11,17 +11,13 @@ int a = 0;
 
 while (a < 10)
 {
-if (a < 9)
-{
 putchar(48 + a);
+if(a < 9)
 putchar(',');
-}
-else
-{
-putchar(48 + a);
-}
+
 putchar(' ');
 a++;
 }
+putchar('\n');
 return (0);
 }
