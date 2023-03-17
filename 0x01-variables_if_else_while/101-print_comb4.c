@@ -12,10 +12,10 @@ int l;
 int s;
 while (i < 8)
 {
-l = i+1;
+l = i + 1;
 while (l < 9)
 {
-s = l+1;
+s = l + 1;
 while (s < 10)
 {
 putchar(i + '0');
