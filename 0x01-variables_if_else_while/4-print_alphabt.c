@@ -14,9 +14,10 @@ while (a <= 122)
 if (a == 'q' || a == 'e'){
 a++;
 }
-else
+else{
 putchar(a);
 a++;
+}
 }
 putchar('\n');
 return (0);
