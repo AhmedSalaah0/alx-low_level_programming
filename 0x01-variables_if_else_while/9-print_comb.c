@@ -15,13 +15,12 @@ if (a < 9)
 {
 putchar(48 + a);
 putchar(',');
-putchar(' ');
 }
 else
 {
 putchar(48 + a);
-putchar(' ');
 }
+putchar(' ');
 a++;
 }
 return (0);
