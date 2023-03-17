@@ -7,16 +7,16 @@
  */
 int main(void)
 {
-    char a = 'a';
+char a = 'a';
 
-    while (a <= 122)
-    {
-        putchar(a);
-        a++;
-    }
+while (a <= 122)
+{
+putchar(a);
+a++;
+}
 
-    putchar('\n');
+putchar('\n');
 
-    return (0);
+	return (0);
 }
 
