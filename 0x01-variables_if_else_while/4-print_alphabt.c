@@ -11,10 +11,12 @@ char a = 'a';
 
 while (a <= 122)
 {
-if (a == 'q' || a == 'e'){
+if (a == 'q' || a == 'e')
+{
 a++;
 }
-else{
+else
+{
 putchar(a);
 a++;
 }
