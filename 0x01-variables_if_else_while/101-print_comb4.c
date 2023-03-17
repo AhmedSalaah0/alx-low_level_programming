@@ -10,10 +10,10 @@ int main(void)
 int i = 0;
 int l;
 int s;
-while(i < 8)
+while (i < 8)
 {
 l = i+1;
-while(l < 9)
+while (l < 9)
 {
 s = l+1;
 while (s < 10)
