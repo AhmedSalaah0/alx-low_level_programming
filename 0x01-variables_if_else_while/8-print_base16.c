@@ -17,7 +17,8 @@ if (a < 10)
 putchar(48 + a);
 a++;
 }
-else{
+else
+{
 putchar(l);
 l++;
 a++;
