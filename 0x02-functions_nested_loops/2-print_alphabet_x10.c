@@ -1,4 +1,4 @@
-#include <main.h>
+#include "main.h"
 
 /**
 * main - Entry point
@@ -16,4 +16,5 @@ for(int l = 'a' ; l <= 'z'; l++)
 _putchar(l);
 }
 i++;
+}
 }
