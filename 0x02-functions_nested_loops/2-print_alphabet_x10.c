@@ -1,9 +1,9 @@
 #include "main.h"
 
 /**
-* function to ptint alphabete 10 times
+* function print_alphabet_x10  to ptint alphabete 10 times
 */
-void  print_alphabet_x10()
+void  print_alphabet_x10(void)
 {
 int i = 0;
 int l;
