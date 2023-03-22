@@ -1,9 +1,7 @@
 #include "main.h"
 
 /**
-* main - Entry point
-*
-* Return: Always 0 (Success)
+* function to ptint alphabete 10 times
 */
 void  print_alphabet_x10()
 {
@@ -16,6 +14,7 @@ for (l = 'a'; l <= 'z'; l++)
 {
 _putchar(l);
 }
+-putchar('\n');
 i++;
 }
 }
