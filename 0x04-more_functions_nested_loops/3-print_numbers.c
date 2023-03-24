@@ -1,3 +1,4 @@
+#include "main.h"
 /**
 * main - check the code
 *
@@ -5,12 +6,11 @@
 */
 void print_numbers(void)
 {
-int i = 0;
+int i;
 
-while (i < 10)
+for (i = 48 ; i < 58 ; i++)
 {
-_putchar(48 + i);
-i++;
+_putchar(i);
 }
-_putchat('\n');
+_putchar('\n');
 }
