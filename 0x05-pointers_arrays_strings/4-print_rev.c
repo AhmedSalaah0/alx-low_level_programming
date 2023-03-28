@@ -1,3 +1,5 @@
+#include <string.h>
+#include <stdio.h>
 #include "main.h"
 /**
  * @s is an array of char
