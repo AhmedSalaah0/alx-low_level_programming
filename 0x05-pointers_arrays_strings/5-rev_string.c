@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <string.h>
+#include "main.h"
 /**
  * @s is an array of char
  * function print_rev reverce the array of char
@@ -16,5 +17,7 @@ for (i = strlen(s); i >= 0; i--)
 {
 rev[strlen(s)-i] = s[i-1];
 }
-printf("\n");
+for (j = 0 ; j < strlen(s);j++)
+s[j] = rev[j];
+}printf("\n");
 }
