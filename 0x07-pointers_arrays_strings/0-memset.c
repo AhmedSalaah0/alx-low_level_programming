@@ -1,9 +1,9 @@
 #include "main.h"
 /**
  * _memaer - function fills memory with constant byte
- * @s: string
- * @b: char
- * @n: an integer only positve
+ * @s: starting address of memory to be filled
+ * @b: the desired value
+ * @n: number of bytes to be changed
  *
  * Return : changed array with new value for n bytes
  */
