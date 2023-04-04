@@ -2,11 +2,11 @@
 #include <stdio.h>
 
 /**
-* _memaer - fills memory with constant byte
+* *_memset - fills memory with constant byte
 * @s: pointer to put the constant
-* @b: constant
+* @b: constant number
 * @n: number of bytes to be changed
-* Return : changed array with new value for n bytes
+* Return: changed array with new value for n bytes
 */
 
 char *_memset(char *s, char b, unsigned int n)
