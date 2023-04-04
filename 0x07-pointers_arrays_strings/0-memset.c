@@ -1,11 +1,11 @@
 #include "main.h"
 /**
- * *_memaer - function fills memory with constant byte 
- * @*s string 
- * @b char
- * @n an integer only positve
+ * _memaer - function fills memory with constant byte
+ * @s: string
+ * @b: char
+ * @n: an integer only positve
  *
- * return s
+ * Return : changed array with new value for n bytes
  */
 char *_memset(char *s, char b, unsigned int n)
 {
