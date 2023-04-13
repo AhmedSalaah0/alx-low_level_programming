@@ -1,9 +1,12 @@
 #include <stdlib.h>
 #include "main.h"
 /**
- * *malloc_checked : malloc function
- * @b: size allocated in memory
- * Return: allocated variable
+ * malloc_checked - allocates memory using malloc and exits if malloc fails
+ *
+ * @b: the size of the memory to be allocated
+ *
+ * Return: pointer to the allocated memory
+ *         exits with status value of 98 if malloc fails
  */
 
 void *malloc_checked(unsigned int b)
@@ -14,6 +17,6 @@ void *malloc_checked(unsigned int b)
 	{
 		exit(98);
 	}
-	
+
 	return (p);
 }
