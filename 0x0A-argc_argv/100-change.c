@@ -1,51 +1,71 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <ctype.h>
+#include <stdbool.h>
 
 /**
- * main - main function
- * @argc: num of commands
- * @*argv: array of array
- * @cents: num of c
- * @coins: num of coins
- * Return: 1 if error otherwise 0
- */ 
-int main(int argc, char **argv)
+ * coinConverter - Helper function that does all the mathematics
+ * @i: Passed in variable from main for calculations
+ * Return: The number of coins needed minimum for the passed in variable
+ */
+int coinConverter(int i)
 {
-    int cents, coins = 0;
+	int cou = 0;
 
-    if (argc != 2) {
-        printf("Error\n");
-        return 1;
-    }
+	while (i != 0)
+	{
+		if (i % 10 == 9 || i % 10 == 7)
+			i -= 2;
+		else if (i % 25 == 0)
+			i -= 25;
+		else if (i % 10 == 0)
+			i -= 10;
+		else if (i % 5 == 0)
+			i -= 5;
+		else if (i % 2 == 0)
+		{
+			if (i % 10 == 6)
+				i -= 1;
+			else
+				i -= 2;
+		}
+		else
+			i -= 1;
 
-    cents = atoi(argv[1]);
+		cou++;
+	}
 
-    if (cents < 0) {
-        printf("0\n");
-        return 0;
-    }
-
-    while (cents > 0) {
-        if (cents >= 25) {
-            cents -= 25;
-            coins++;
-        } else if (cents >= 10) {
-            cents -= 10;
-            coins++;
-        } else if (cents >= 5) {
-            cents -= 5;
-            coins++;
-        } else if (cents >= 2) {
-            cents -= 2;
-            coins++;
-        } else {
-            cents -= 1;
-            coins++;
-        }
-    }
-
-    printf("%d\n", coins);
-
-    return 0;
+	return (cou);
 }
 
+/**
+ * main - Takes in exactly one argument for minimum coin count
+ * @argc: Number of command line arguments
+ * @argv: Array name
+ * Return: 0 if exactly 1 argument is passed into this program, 1 otherwise
+ */
+int main(int argc, char *argv[])
+{
+	int i, c;
+
+	c = 0;
+
+	if (argc != 2)
+	{
+		printf("Error\n");
+		return (1);
+	}
+
+	i = atoi(argv[1]);
+
+	if (i < 0)
+		printf("0\n");
+	else
+	{
+		c = coinConverter(i);
+
+		printf("%d\n", c);
+	}
+
+	return (0);
+}
