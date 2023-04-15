@@ -16,7 +16,10 @@ int main(int argc, char *argv[])
 
 
 	if (argc < 2)
-	printf("0\n");
+	{
+		printf("0\n");
+		return (0);
+	}
 	else
 	{
 		for (i = 1; i < argc; i++)
