@@ -20,7 +20,7 @@ return (NULL);
 
 for (i = 0; i < height; i++)
 {
-	g[i] = calloc(width, sizeof(int));
+	g[i] = malloc(width, sizeof(int));
 	if (g[i] == NULL)
 	{
 		for (j = 0; j < i; j++)
@@ -29,5 +29,9 @@ for (i = 0; i < height; i++)
 		return (NULL);
 	}
 }
+for (i = 0; i < height; i++)
+for (j = 0; j < width; j++)
+grid[i][j] = 0;
+
 return (g);
 }
