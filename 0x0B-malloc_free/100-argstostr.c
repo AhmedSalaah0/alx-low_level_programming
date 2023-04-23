@@ -28,11 +28,11 @@ for (i = 0; i < ac; i++)
 	for (j = 0; av[i][j] != '\0'; j++)
 	{
 		s[f] = av[i][j];
-		f++
+		f++;
 	}
-	s[k] = av[i][j];
-	k++;
+	s[f] = av[i][j];
+	f++;
 }
-	s[k] = '\0';
+	s[f] = '\0';
 return (s);
 }
