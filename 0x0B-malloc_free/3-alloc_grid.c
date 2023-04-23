@@ -20,7 +20,7 @@ return (NULL);
 
 for (i = 0; i < height; i++)
 {
-	g[i] = malloc(width, sizeof(int));
+	g[i] = calloc(width, sizeof(int));
 	if (g[i] == NULL)
 	{
 		for (j = 0; j < i; j++)
