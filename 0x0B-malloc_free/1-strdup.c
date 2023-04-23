@@ -1,7 +1,7 @@
 #include "main.h"
 #include <stdlib.h>
 /**
- * _strdub - function dublicates a string
+ * _strdup - function dublicates a string
  * @str: string
  * Return: Null or pointer
  */
