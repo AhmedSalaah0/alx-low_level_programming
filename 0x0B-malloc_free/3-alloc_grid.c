@@ -31,7 +31,7 @@ for (i = 0; i < height; i++)
 }
 for (i = 0; i < height; i++)
 for (j = 0; j < width; j++)
-grid[i][j] = 0;
+g[i][j] = 0;
 
 return (g);
 }
