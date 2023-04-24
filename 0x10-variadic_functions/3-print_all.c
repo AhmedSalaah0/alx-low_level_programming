@@ -1,10 +1,10 @@
 #include <stdarg.h>
 #include <stdio.h>
-#include "variadic_functions"
+#include "variadic_functions.h"
 /**
- *
- *
- *
+ *print_all - print all things
+ *@format: data typr
+ *Return: void
  */
 void print_all(const char * const format, ...)
 {
@@ -12,37 +12,44 @@ va_list args;
 char *s;
 unsigned int i;
 char c;
+int iv;
+float f;
 
 va_start(args, format);
 i = 0;
 
 while (format && format[i])
 {
-c = format[i];
 
-switch (c)
+
+switch (format[i])
 {
 	case 'c':
-		printf("%c", va_arg(args, int);
+		c = va_arg(args, int);
+		printf("%c", c);
 		break;
 	case 'i':
-		printf("%d", va_arg(args, int);
+		iv = va_arg(args, int);
+		printf("%d", iv);
 		break;
 	case 'f':
-		printf("%f", va_arg(args, double);
+		f = va_arg(args, double);
+		printf("%f", f);
 		break;
 	case 's':
 		s = va_arg(args, char *);
-		if (s == NULL)
-		s = "(nil)";
+		if (s)
+		{
 		printf("%s", s);
-	default:
-		i++;
-		continue;
+		break;
 		}
-		if (format[i + 1])
-		printf(", ");
+		else
+		printf("(nil)");
+		break;
+}
 		i++;
+		if (format[i])
+		printf(", ");
 }
 
 printf("\n");
