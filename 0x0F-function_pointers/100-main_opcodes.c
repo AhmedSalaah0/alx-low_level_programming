@@ -4,7 +4,8 @@
  * print_opcodes - function
  * @address: address of var
  * @nbytes: bytes num
-*/
+ * Return: 1, 2 or 0
+ */
 void print_opcodes(char *address, int nbytes)
 {
 int i;
@@ -25,17 +26,17 @@ int nbytes;
 if (argc != 2)
 {
 printf("Error\n");
-return 1;
+return (1);
 }
 
 nbytes = atoi(argv[1]);
 if (nbytes <= 0)
 {
 printf("Error\n");
-return 2;
+return (2);
 }
 
 print_opcodes((char *)main, nbytes);
 
-return 0;
+return (0);
 }
