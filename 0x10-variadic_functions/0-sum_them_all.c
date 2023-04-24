@@ -1,8 +1,9 @@
 #include <stdarg.h>
 #include "main.h"
 /**
- *
- *
+ *sum_them_all - funcion return sum of n args
+ *@n: number of args
+ *Return: if n = 0 return 0 else return the sum
  */
 int sum_them_all(const unsigned int n, ...)
 {
