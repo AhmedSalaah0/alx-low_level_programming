@@ -2,8 +2,9 @@
 #include <stdio.h>
 #include "variadic_functions.h"
 /**
- *
- *
+ *print_strings - print each string then separator
+ *@separator:seprator prints afrer each string
+ *@n: number of args
  */
 
 void print_strings(const char *separator, const unsigned int n, ...)
