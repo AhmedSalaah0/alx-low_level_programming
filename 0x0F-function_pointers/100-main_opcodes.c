@@ -19,6 +19,12 @@ printf(" ");
 
 printf("\n");
 }
+/**
+ * main - main function
+ *@argc: number of arg.
+ *@argv: 2D array
+ *Return: 1
+ */
 int main(int argc, char **argv)
 {
 int nbytes;
