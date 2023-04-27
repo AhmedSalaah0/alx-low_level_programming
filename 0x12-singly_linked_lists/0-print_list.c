@@ -16,7 +16,7 @@ while (h != NULL)
 		printf("[0] (nil)");
 	else
 	{
-		printf("[%u] %s\n", h->len, h->str);
+		printf("%s\n",  h->str);
 	}
 	cou++;
 	h = h->next;
