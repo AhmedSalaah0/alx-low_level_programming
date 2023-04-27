@@ -3,14 +3,15 @@
 #include <string.h>
 #include "lists.h"
 /**
- *
- *
- *
+ *add_node - add elem. to list begin
+ *@head: list start
+ *@str: new elem.
+ *Return: Null if str is Null otherwise New Node
  */
 list_t *add_node(list_t **head, const char *str)
 {
 list_t *NewNode;
-	
+
 if (str == NULL)
 return (NULL);
 
