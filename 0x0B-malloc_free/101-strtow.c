@@ -38,7 +38,7 @@ char **strtow(char *str)
         return (NULL);
 
     cou = count_words(str);
-    w = malloc((count + 1) * sizeof(char *));
+    w = malloc((cou + 1) * sizeof(char *));
     if (w == NULL)
         return (NULL);
 
