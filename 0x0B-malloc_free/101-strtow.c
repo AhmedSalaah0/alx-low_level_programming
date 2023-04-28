@@ -3,72 +3,72 @@
 #include <stdlib.h>
 
 /**
- * count_words - Counts string words
- * @str: sring
+ * count_words - Counts the number of words in a string.
+ * @str: The input string.
  *
- * Return: The number of words
+ * Return: The number of words in the string.
  */
 int count_words(char *str)
 {
-    int i, cou = 0;
+int i, cou = 0;
 
-    for (i = 0; str[i] != '\0'; i++)
-    {
-        if (str[i] != ' ' && (str[i + 1] == ' ' || str[i + 1] == '\0'))
-        {
-            cou++;
-        }
-    }
+for (i = 0; str[i] != '\0'; i++)
+{
+if (str[i] != ' ' && (str[i + 1] == ' ' || str[i + 1] == '\0'))
+{
+cou++;
+}
+}
 
-    return cou;
+return cou;
 }
 
 /**
- * strtow - Splits a string
- * @str: string
+ * strtow - Splits a string into words.
+ * @str: The input string.
  *
- * Return: Array pointer
+ * Return: A pointer to an array of strings (words).
  */
 char **strtow(char *str)
 {
-    char **w;
-    int i, j, k, len, cou = 0;
+char **w;
+int i, j, k, len, cou = 0;
 
-    if (str == NULL || *str == '\0')
-        return (NULL);
+if (str == NULL || *str == '\0')
+return (NULL);
 
-    cou = count_words(str);
-    w = malloc((cou + 1) * sizeof(char *));
-    if (w == NULL)
-        return (NULL);
+cou = count_words(str);
+w = malloc((cou + 1) * sizeof(char *));
+if (w == NULL)
+return (NULL);
 
-    for (i = 0, j = 0; i < cou; i++)
-    {
-        while (str[j] == ' ')
-            j++;
+for (i = 0, j = 0; i < cou; i++)
+{
+while (str[j] == ' ')
+++j;
 
-        len = 0;
-        while (str[j + len] != ' ' && str[j + len] != '\0')
-            len++;
+len = 0;
+while (str[j + len] != ' ' && str[j + len] != '\0')
+++len;
 
-        w[i] = malloc((len + 1) * sizeof(char));
-        if (w[i] == NULL)
-        {
-            for (k = 0; k < i; k++)
-                free(w[k]);
+w[i] = malloc((len + 1) * sizeof(char));
+if (w[i] == NULL)
+{
+for (k = 0; k < i; ++k)
+free(w[k]);
 
-            free(w);
-            return (NULL);
-        }
+free(w);
+return (NULL);
+}
 
-        for (k = 0; k < len; k++)
-            w[i][k] = str[j + k];
+for (k = 0; k < len; k++)
+w[i][k] = str[j + k];
 
-        w[i][k] = '\0';
-        j += len;
-    }
+w[i][k] = '\0';
+j += len;
+}
 
-    w[i] = NULL;
+w[i] = NULL;
 
-    return (w);
+return (w);
 }
