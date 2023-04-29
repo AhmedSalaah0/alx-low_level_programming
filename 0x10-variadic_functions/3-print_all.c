@@ -32,7 +32,7 @@ switch (format[i])
 		if (!s)
 		s = "(nil)";
 
-		printf("%s%s", sp, s)
+		printf("%s%s", sp, s);
 		break;
 	default:
 		i++;
