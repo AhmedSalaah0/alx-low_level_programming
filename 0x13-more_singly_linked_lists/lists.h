@@ -1,5 +1,10 @@
 #ifndef LISTS_H
 #define LISTS_H
+/**
+ *struct listint_s - linked list
+ *@n: int
+ *@next: next node
+ */
 typdef struct listint_s
 {
 int n;
