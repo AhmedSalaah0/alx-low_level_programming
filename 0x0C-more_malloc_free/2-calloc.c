@@ -1,8 +1,10 @@
 #include <stdlib.h>
 #include "main.h"
 /**
- *
- *
+ *_calloc - function allocates memory for an array
+ *@nmemb: num of arr
+ *@size: array size
+ *Return:NULL if fail
  */
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
