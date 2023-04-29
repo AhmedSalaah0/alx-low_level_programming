@@ -11,8 +11,8 @@ int c = 0;
 
 while (h)
 {
-if (h->n)
 c++;
+h = h->next;
 }
 return (c);
 }
