@@ -12,8 +12,9 @@ int i = 0;
 char *s, *sp = "";
 va_start(args, format);
 
-
-while (format && format[i])
+if (format)
+{
+while (format[i])
 {
 switch (format[i])
 {
@@ -40,6 +41,7 @@ switch (format[i])
 
 		sp = ", ";
 		i++;
+}
 }
 printf("\n");
 va_end(args);
