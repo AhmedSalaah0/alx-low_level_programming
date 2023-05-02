@@ -32,5 +32,5 @@ free(*h);
 }
 }
 
-return c;
+return (c);
 }
