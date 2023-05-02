@@ -7,7 +7,7 @@
  *@head: list head
  *Return: 0 if NULL
  */
-int pop_listint(listint_t **head)
+int pop_listint (listint_t **head)
 {
 listint_t *t = *head;
 int l;
@@ -19,7 +19,7 @@ l = (*head)->n;
 
 *head = (*head)->next;
 
-free (t);
+free(t);
 
 return (l);
 }
