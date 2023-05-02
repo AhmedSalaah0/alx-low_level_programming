@@ -6,11 +6,10 @@
  */
 void free_dog(dog_t *d)
 {
-while (d)
+if (d)
 {
 free(d->name);
 free(d->owner);
-free(d->age);
 free(d);
 }
 }
