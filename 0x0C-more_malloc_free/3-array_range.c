@@ -13,12 +13,12 @@ int *a, i;
 if (min > max)
 return (NULL);
 
-a = malloc(sizeof(int) * (max - min +1));
+a = malloc(sizeof(int) * (max - min + 1));
 
 if (a == NULL)
 return (NULL);
 
-for (i = 0; i <= max-min; i++)
+for (i = 0; i <= max - min; i++)
 a[i] = min + i;
 
 return (a);
