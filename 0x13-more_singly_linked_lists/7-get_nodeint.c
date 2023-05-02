@@ -1,7 +1,9 @@
 #include "lists.h"
 /**
- *
- *
+ *get_nodeint_at_index - func return nth list idx
+ * @head:the list head
+ * @index: index number
+ * Return: Null if fails otherwise the index
  */
 listint_t *get_nodeint_at_index(listint_t *head, unsigned int index)
 {
