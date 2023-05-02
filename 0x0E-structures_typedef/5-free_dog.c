@@ -2,7 +2,7 @@
 #include <stdlib.h>
 /**
  *free_dog - free struct
- *@d:will free 
+ *@d:will free
  */
 void free_dog(dog_t *d)
 {
@@ -10,6 +10,7 @@ while (d)
 {
 free(d->name);
 free(d->owner);
+free(d->age);
 free(d);
 }
 }
