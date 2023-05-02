@@ -7,12 +7,14 @@
  */
 int is_palindrome(char *s)
 {
-	int len = strlen(s);
+int len = strlen(s);
+char *p = s, *q = s + len - 1;
 
-	if (len <= 1)
-		return (1);
-	if (s[0] == s[len - 1])
-		return (is_palindrome(s + 1) && 1);
-	else
-		return (0);
+if (i >= j)
+return (1);
+
+if (s[i] != s[j])
+return (0);
+
+return (is_palindrome(s, i + 1, j - 1);
 }
