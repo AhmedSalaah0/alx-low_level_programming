@@ -1,5 +1,7 @@
 #include "main.h"
 #include <string.h>
+#include <ctype.h>
+
 /**
  * is_palindrome - check if string is palindrome
  * @s: string that while check
@@ -7,14 +9,21 @@
  */
 int is_palindrome(char *s)
 {
-int len = strlen(s);
-char *p = s, *q = s + len - 1;
+    int l = strlen(s);
+    char *p = s;
+    char *q = s + l - 1;
 
-if (i >= j)
-return (1);
+    while (p < q)
+    {
+        while (!isalpha(*p))
+            p++;
+        while (!isalpha(*q))
+            q--;
+        if (tolower(*p) != tolower(*q))
+            return (0);
+        p++;
+        q--;
+    }
 
-if (s[i] != s[j])
-return (0);
-
-return (is_palindrome(s, i + 1, j - 1);
+    return (1);
 }
