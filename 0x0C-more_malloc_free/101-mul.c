@@ -1,120 +1,113 @@
 #include <stdio.h>
+#include <string.h>
 #include <stdlib.h>
-#include "main.h"
+#include <ctype.h>
 
-int _isdigit(char c);
-void print_error(void);
-char *mul(char *n1, char *n2);
+int valid(char *s);
+char* mul(char *n1, char *n2);
 
 /**
- * main - multiplies two numbers
- * @argc: the number of arguments
- * @argv: pointers to the arguments
- *
- * Return: 0 if successful
- */
-int main(int argc, char **argv)
+ * main - main function
+ * @args: number of arguments
+ * @argv: array of args
+ * Return: 98 if fails
+*/
+int main(int argc, char *argv[])
 {
 char *res;
 
 if (argc != 3)
 {
-print_error();
+printf("Error\n");
 return (98);
 }
-
-if (!mul(argv[1], "1") || !mul(argv[2], "1"))
+if (!valid(argv[1]) || !valid(argv[2]))
 {
-print_error();
+printf("Error\n");
 return (98);
 }
-
 res = mul(argv[1], argv[2]);
-if (!res)
-{
-print_error();
-return (98);
-}
-
 printf("%s\n", res);
-
 free(res);
-
 return (0);
 }
 
 /**
- * _isdigit - checks if digit
- * @c: the character will be checked
- *
- * Return: 1 if c is a digit
- */
-int _isdigit(char c)
+ * valid - func check if inputs is valid
+ * @s: string which will checked
+ * Return: 0 if fail
+*/
+int valid(char *s)
 {
-return (c >= '0' && c <= '9');
+int i;
+for (i = 0; s[i] != '\0'; i++)
+{
+if (!isdigit(s[i]))
+{
+return (0);
+}
+}
+return (1);
 }
 
 /**
- * print_error - prints Error
- *
- * Return: void
- */
-void print_error(void)
+ * mul - func multiplay to nums
+ * @n1: first num
+ * @n2: second num
+ * Return: result
+*/
+char* mul(char *n1, char *n2)
 {
-fprintf(stderr, "Error\n");
-}
-
-/**
- * mul - multiplies two numbers
- * @n1: first number
- * @n2: second number
- *
- * Return: a string containing the product of the two numbers
- */
-char *mul(char *n1, char *n2)
-{
-int l1 = 0, l2 = 0, i, j, k, c;
-char *res;
-
-while (n1[l1])
-l1++;
-
-while (n2[l2])
-l2++;
-
-if (l1 == 0 || l2 == 0)
-{
-return (NULL);
-}
-
-res = calloc(l1 + l2 + 1, sizeof(char));
-if (!res)
-return (NULL);
+int l1 = strlen(n1);
+int l2 = strlen(n2);
+int *res = (int *)calloc(l1 + l2, sizeof(int));
+int i1 = 0;
+int i2 = 0;
+int i;
+int carry = 0, f , sum, j, d;
+char *zero, *str;
 
 for (i = l1 - 1; i >= 0; i--)
 {
-if (!_isdigit(n1[i]))
+
+f = n1[i] - '0';
+i2 = 0;
+for (j = l2 - 1; j >= 0; j--)
 {
-free(res);
-return (NULL);
+d = n2[j] - '0';
+sum = f * d + res[i1 + i2] + carry;
+carry = sum / 10;
+res[i1 + i2] = sum % 10;
+i2++;
 }
-c = 0;
-for (j = l2 - 1, k = i + l2; j >= 0; j--, k--)
+if (carry > 0)
 {
-if (!_isdigit(n2[j]))
-{
-free(res);
-return (NULL);
+res[i1 + i2] += carry;
 }
-c += (n1[i] - '0') * (n2[j] - '0') + res[k];
-res[k] = c % 10;
-c /= 10;
-}
-res[i + j + 1] = c;
+i1++;
 }
 
-while (*res == 0 && *(res + 1))
-res++;
+i = l1 + l2 - 1;
+while (i >= 0 && res[i] == 0)
+{
+i--;
+}
 
-return (res);
+if (i == -1)
+{
+zero = (char*) malloc(2);
+zero[0] = '0';
+zero[1] = '\0';
+free(res);
+return zero;
+}
+
+str = (char*) malloc(i + 2);
+for (j = i; j >= 0; j--)
+{
+str[i - j] = res[j] + '0';
+}
+str[i + 1] = '\0';
+free(res);
+return str;
 }
