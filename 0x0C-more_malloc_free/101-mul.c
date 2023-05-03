@@ -4,11 +4,11 @@
 #include <ctype.h>
 
 int valid(char *s);
-char* mul(char *n1, char *n2);
+char *mul(char *n1, char *n2);
 
 /**
  * main - main function
- * @args: number of arguments
+ * @argc: number of arguments
  * @argv: array of args
  * Return: 98 if fails
 */
@@ -56,7 +56,7 @@ return (1);
  * @n2: second num
  * Return: result
 */
-char* mul(char *n1, char *n2)
+char *mul(char *n1, char *n2)
 {
 int l1 = strlen(n1);
 int l2 = strlen(n2);
@@ -64,7 +64,7 @@ int *res = (int *)calloc(l1 + l2, sizeof(int));
 int i1 = 0;
 int i2 = 0;
 int i;
-int carry = 0, f , sum, j, d;
+int carry = 0, f, sum, j, d;
 char *zero, *str;
 
 for (i = l1 - 1; i >= 0; i--)
@@ -75,7 +75,7 @@ i2 = 0;
 for (j = l2 - 1; j >= 0; j--)
 {
 d = n2[j] - '0';
-sum = f * d + res[i1 + i2] + carry;
+sum = f *d + res[i1 + i2] + carry;
 carry = sum / 10;
 res[i1 + i2] = sum % 10;
 i2++;
@@ -95,19 +95,19 @@ i--;
 
 if (i == -1)
 {
-zero = (char*) malloc(2);
+zero = (char *) malloc(2);
 zero[0] = '0';
 zero[1] = '\0';
 free(res);
-return zero;
+return (zero);
 }
 
-str = (char*) malloc(i + 2);
+str = (char *) malloc(i + 2);
 for (j = i; j >= 0; j--)
 {
 str[i - j] = res[j] + '0';
 }
 str[i + 1] = '\0';
 free(res);
-return str;
+return (str);
 }
