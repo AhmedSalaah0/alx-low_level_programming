@@ -1,6 +1,6 @@
 #include "main.h"
 /**
- *flip_bits - func to flib bits 
+ *flip_bits - func to flib bits
  *@n: the number
  *@m: second number
  *Return: number of flibed bits
