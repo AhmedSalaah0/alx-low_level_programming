@@ -1,6 +1,6 @@
 #include "main.h"
 /**
- * binart_to_uint - convert binary number to decimal
+ * binary_to_uint - convert binary number to decimal
  * @b:first bit of binary num
  * Return: 0 if fail
  */
@@ -8,6 +8,9 @@ unsigned int binary_to_uint(const char *b)
 {
 unsigned int x = 0;
 int i = 0;
+
+if (!b)
+return (0);
 
 while (b[i] != '\0')
 {
@@ -26,5 +29,5 @@ return (0);
 i++;
 }
 
-return x;
+return (x);
 }
