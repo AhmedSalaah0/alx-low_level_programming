@@ -3,6 +3,7 @@
  * get_bit - get the val of bit
  * @n: numer
  * @index: index number
+ * Return: -1 if fail
  */
 int get_bit(unsigned long int n, unsigned int index)
 {
