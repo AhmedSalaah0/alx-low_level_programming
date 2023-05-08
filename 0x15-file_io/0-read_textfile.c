@@ -1,8 +1,9 @@
 #include "main.h"
 /**
- *
- *
- *
+ * read_textfile - func read a file and print content
+ * @filename: the name of the file
+ * @letters: number of letters will printed
+ * Return: 0 if NULL
  */
 ssize_t read_textfile(const char *filename, size_t letters)
 {
