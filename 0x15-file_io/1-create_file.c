@@ -14,7 +14,7 @@ int r;
 if (filename == NULL)
 return (-1);
 
-f = open(filename,O_CREAT | O_WRONLY | O_TRUNC,  "w");
+f = open(filename, O_CREAT | O_WRONLY | O_TRUNC, "w");
 
 if (f == -1)
 return (-1);
