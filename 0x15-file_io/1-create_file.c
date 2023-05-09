@@ -20,7 +20,7 @@ if (f == NULL)
 return (-1);
 
 len = strlen(text_content);
-c = 0;
+c = 1;
 
 fwrite(text_content, len, c, f);
 
