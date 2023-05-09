@@ -7,19 +7,40 @@
  */
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-FILE *file = fopen(filename, "r");
-char c;
-size_t t;
+FILE *file;
+char *c;
+ssize_t r, w;
+
+if (filename == NULL)
+return (0);
+
+file = fopen(filename, "r");
 
 if (file == NULL)
 return (0);
-
-t = 0;
-while (t < letters && (c = fgetc(file)) != EOF)
+c = malloc(letters * sizeof(char));
+if (c == NULL)
 {
-putchar(c);
-t++;
-}
 fclose(file);
-return (t);
+return (0);
+}
+r = fread(c, sizeof(char), letters, file);
+
+if (r == -1)
+{
+free(c);
+fclose(file);
+return (0);
+}
+w = fwrite(c, sizeof(char), r, stdout);
+if (w == -1 || w != r)
+{
+free(c);
+fclose(file);
+return (0);
+}
+free(c);
+fclose(file);
+
+return (w);
 }
