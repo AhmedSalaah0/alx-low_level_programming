@@ -30,5 +30,5 @@ r = chmod(filename, 0600);
 if (r == -1)
 return (-1);
 
-return (0);
+return (1);
 }
