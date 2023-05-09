@@ -1,40 +1,34 @@
 #include "main.h"
-#include <fcntl.h>
-#include <unistd.h>
 /**
- * create_file - func. creare a file
+ * create_file - create file with specif. permissions
  * @filename: file name
- * @text_content: file content
- * Return: -1 if fail
+ * @text_content: content will add to the created file
+ * Return: -1 if fail and 0 if success
  */
 int create_file(const char *filename, char *text_content)
 {
-int f;
-ssize_t l, w;
+FILE *f;
+size_t len, c;
+int r;
 
 if (filename == NULL)
 return (-1);
 
-f = open(filename, O_WRONLY | O_CREAT | O_TRUNC, 0600);
+f = fopen(filename, "w");
 
-if (f == -1)
+if (f == NULL)
 return (-1);
 
-if (text_content)
-{
-l = 0;
-while (text_content[l] != '\0')
-l++;
+len = strlen(text_content);
+c = 0;
 
-w = write(f, text_content, l);
-if (w != l)
-{
-close(f);
+fwrite(text_content, len, c, f);
+
+fclose(f);
+
+r = chmod(filename, 0600);
+if (r == -1)
 return (-1);
-}
-}
 
-close(f);
-return (1);
+return (0);
 }
-
