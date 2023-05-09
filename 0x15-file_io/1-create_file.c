@@ -7,28 +7,28 @@
  */
 int create_file(const char *filename, char *text_content)
 {
-FILE *f;
-size_t len, c;
+int f;
+size_t len;
 int r;
 
 if (filename == NULL)
 return (-1);
 
-f = fopen(filename, "w");
+f = open(filename,O_CREAT | O_WRONLY | O_TRUNC,  "w");
 
-if (f == NULL)
+if (f == -1)
 return (-1);
+
+if (text_content == NULL)
+text_content = "";
 
 len = strlen(text_content);
-c = 1;
 
-fwrite(text_content, len, c, f);
-
-fclose(f);
-
-r = chmod(filename, 0600);
+r = write(f, text_content, len);
 if (r == -1)
 return (-1);
+
+close(f);
 
 return (1);
 }
