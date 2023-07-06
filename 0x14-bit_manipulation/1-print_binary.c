@@ -10,7 +10,8 @@ void print_binary(unsigned long int n)
 int i, k;
 int print_flag = 0;
 
-if (n == 0) {
+if (n == 0)
+{
 printf("0");
 return;
 }
