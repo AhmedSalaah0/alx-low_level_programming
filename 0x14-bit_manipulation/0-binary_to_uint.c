@@ -10,7 +10,7 @@
 
 unsigned int binary_to_uint(const char *b)
 {
-int res = 0, bs = 1, i ,len = strlen(b);
+int res = 0, bs = 1, i, len = strlen(b);
 char *str = (char *)b;
 
 for (i = len - 1; i >= 0; i--)
