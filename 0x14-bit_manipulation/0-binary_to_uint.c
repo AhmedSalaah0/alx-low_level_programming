@@ -11,10 +11,12 @@
 
 unsigned int binary_to_uint(const char *b)
 {
-int res = 0, bs = 1, len = strlen(b);
+int res = 0, bs = 1, len;
 
-if (b == NULL)
+if (b == '\0')
 return (0);
+
+len = strlen(b);
 
 
 for (len -= 1; len >= 0; len--)
