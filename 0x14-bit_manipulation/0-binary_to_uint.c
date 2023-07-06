@@ -12,7 +12,6 @@
 unsigned int binary_to_uint(const char *b)
 {
 int res = 0, bs = 1, i, len = strlen(b);
-char *str = (char *)b;
 
 if (b == NULL)
 return (0);
@@ -20,9 +19,9 @@ return (0);
 for (i = len - 1; i >= 0; i--)
 {
 
-if (str[i] != '1' && str[i] != '0')
+if (b[i] != '1' && b[i] != '0')
 return (0);
-if (str[i] == '1')
+if (b[i] == '1')
 res += bs;
 bs *= 2;
 }
