@@ -1,7 +1,9 @@
 #include "main.h"
 /**
- *
- *
+ *get_bit - git the bit of index
+ *@n: bin num
+ *@index: index of bit
+ *Return: -1 if fail
  */
 int get_bit(unsigned long int n, unsigned int index)
 {
