@@ -2,7 +2,7 @@
 #include "main.h"
 
 /**
- * print_binary: print bin num
+ * print_binary - print bin num
  * @n: num to convert
  */
 void print_binary(unsigned long int n)
