@@ -3,7 +3,7 @@
  * clear_bit - clear bits from 0 to index
  * @n: the binary number
  * @index: the index
- * Retuen: 1 if success or -1 if fail
+ * Return: 1 if success or -1 if fail
  */
 
 int clear_bit(unsigned long int *n, unsigned int index)
@@ -12,7 +12,7 @@ int clear_bit(unsigned long int *n, unsigned int index)
 
 	if (index > 63)
 		return (-1);
-	
+
 	r = 1 << index;
 
 	if (*n & r)
