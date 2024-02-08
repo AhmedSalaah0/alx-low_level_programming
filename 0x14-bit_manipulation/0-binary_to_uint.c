@@ -6,17 +6,17 @@
  *
  */
 unsigned int binary_to_uint(const char *b){
-	int i, j = 0;
+	int i = strlen(b), j;
 	unsigned int res = 0;
 	
-	if (!b)
+	if (b == NULL)
 	return (0);	
 
-	for (i = strlen(b) - 1; i >= 0; i--, j++) 
+	for (i--, j = 1; i >= 0; i--, j *= 2) 
 	{
 	if (b[i] == '1') 
 	{
-	res += pow(2, j);
+	res += j;
 	}
 	else if (b[i] != '0')
 	{
