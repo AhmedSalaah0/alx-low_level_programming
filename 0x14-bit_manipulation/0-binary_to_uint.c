@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <math.h>
 #include <string.h>
+#include "main.h"
 /**
  *binary_to_uint - convert bin num to uint
  *@b: bin num
