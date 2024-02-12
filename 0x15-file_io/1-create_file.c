@@ -1,7 +1,7 @@
 #include "main.h"
 /**
  * create_file - create a new file
- * @filename: name of the file 
+ * @filename: name of the file
  * @text_content: text that will added if file not exist
  * Return: 1 if success, -1 if fail
 */
