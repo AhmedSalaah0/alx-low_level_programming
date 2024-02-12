@@ -13,10 +13,9 @@ int len,f, writ;
 char *t;
 
 t = malloc(letters);
-if (t == NULL)
+if (t == NULL || filename == NULL)
 return (0);
-if (filename == NULL)
-return (0);
+
 f = open(filename, O_RDONLY);
 if (f == -1)
 {
