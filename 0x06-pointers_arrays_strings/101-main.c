@@ -18,8 +18,4 @@ int main(void)
     print_number(-98);
     _putchar('\n');
     return (0);
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 774622a4f8cc2e520b95ff3214783522717e7c3e
