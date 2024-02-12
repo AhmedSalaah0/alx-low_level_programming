@@ -8,7 +8,7 @@
 int main(int argc, char **argv)
 {
 int f1, f2, d1, d2;
-char content[1000];
+char content[1024];
 
 if (argc != 3)
 dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n"), exit(97);
